@@ -33,5 +33,10 @@ namespace lights_out
         {
 
         }
+
+        private void Description_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -101,6 +101,7 @@
             Name = "Description";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Description";
+            Load += Description_Load;
             ResumeLayout(false);
             PerformLayout();
         }

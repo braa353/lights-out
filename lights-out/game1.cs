@@ -23,7 +23,6 @@ namespace lights_out
         {
             InitializeComponent();
         }
-        //تهيأ الكائنات
         private void game_3x3_Load(object sender, EventArgs e)
         {
             game3x3 = new Game
@@ -53,7 +52,6 @@ namespace lights_out
        
 
         }
-        //
         private void threebythree_Click(object sender, EventArgs e)
         {
             int Countofrow = tableLayoutPanel1.RowCount;
@@ -126,7 +124,6 @@ namespace lights_out
         {
 
         }
-        //زر الاستسلام
         private void button4_Click(object sender, EventArgs e)
         {
             bool  a = game3x3.CheckIfAllButtonsAreOff();
@@ -167,7 +164,6 @@ namespace lights_out
             }
 
         }
-        //تلوين الزر الي اللعبة تبعو شغالة
         private void ColorOfB(int x)
         {
             if ( x == 3 )
@@ -189,7 +185,7 @@ namespace lights_out
                 fivebyfive.BackColor = Color.LightGreen;
             }
         }
-        // تحديد المستوى المراد لعبه
+
         private void Game_SWich( int x)
         { 
            if (x == 3)
@@ -227,7 +223,6 @@ namespace lights_out
                 Game_SWich(3);
             }
         }
-        // بعت النتائج لواجهة الاحصائيات
         private void button1_Click(object sender, EventArgs e)
         {
             new Reportcs( game3x3 , game4x4 ,game5x5 ).Show();   

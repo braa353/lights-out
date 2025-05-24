@@ -36,5 +36,10 @@ namespace lights_out
         {
 
         }
+
+        private void home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

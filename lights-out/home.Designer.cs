@@ -92,6 +92,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "home";
+            Load += home_Load;
             ResumeLayout(false);
             PerformLayout();
         }
