@@ -13,8 +13,8 @@ namespace lights_out
     public class Game
     {
         public tableLayoutPanel tableLayoutPanel1 { get; set; }
-        public Lable label2 {  get; set; } //النص تبع الحركات 
-        public Lable label4 { get; set; }//النص تبع افضل نتيجه
+        public Lable label2 {  get; set; } 
+        public Lable label4 { get; set; }
         public int rowCount { get; set; }
         public int columnCount { get; set; }
         public int Move_count { get; set; }
@@ -23,10 +23,9 @@ namespace lights_out
         public int GivUpCount { get; set; }
         public int BestRecord { get; set; }
         public bool GameIsStarted { get; set; }
-        public Game() {/**/} //باني فاضي
+        public Game() {/**/} 
 
 
-        // تنضيف البورد تبع اللعب من الازرار
         public void cleir_bord()
         {
            
@@ -47,7 +46,6 @@ namespace lights_out
        
         }
 
-        //بتبلش اللعبه
         public void Start_Game()
         {
             cleir_bord();
@@ -64,13 +62,6 @@ namespace lights_out
                         ImageAlign = ContentAlignment.MiddleCenter,
                       
                     };
-                    //Image originalImage = Image.FromFile("C:\\Users\\Acer\\Desktop\\lights-out1\\lights-out\\lights-out\\assits");
-
-                    // تغيير حجم الصورة لتناسب أبعاد الزر  
-                    //Image resizedImage = new Bitmap(originalImage, new Size(70, 70));
-
-                    // تعيين الصورة التي تم تغيير حجمها  
-                    //btn.Image = resizedImage;
                     btn.Click += Button_Click;
 
                     tableLayoutPanel1.Controls.Add(btn, col, row);
@@ -80,7 +71,6 @@ namespace lights_out
            
         }
 
-        //تلوين الازرار بشكل عشوائي
         public void ColorRandomizeButtons()
         {
 
@@ -96,7 +86,7 @@ namespace lights_out
 
                     if (randomValue == 0)
                     {
-                        button.BackColor = Color.LightGreen;
+                        button.BackColor = Color.LightBlue;
                         button.ForeColor = Color.Black;
                     }
                     else
@@ -107,7 +97,6 @@ namespace lights_out
                 }
             }
         }
-        //حدث الضغط عالزر
         public void Button_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -126,7 +115,6 @@ namespace lights_out
                 
             }
         }
-        //جيب الاحداثيات تبع كل زر
         public void ToggleAdjacentButtons(Button clickedButton)
         {
 
@@ -142,7 +130,6 @@ namespace lights_out
 
             ToggleButtonAtPosition(col + 1, row);
         }
-        //تتبع حالة الزر الي فوقو والي تحتو و يمينو و يسارو
         public void ToggleButtonAtPosition(int col, int row)
         {
 
@@ -157,22 +144,20 @@ namespace lights_out
                 }
             }
         }
-        //تتبع حالة  الزر
         public void ToggleButton(Button button)
         {
 
-            if (button.BackColor == Color.LightGreen)
+            if (button.BackColor == Color.LightBlue)
             {
                 button.BackColor = SystemColors.Control;
                 button.ForeColor = Color.Gray;
             }
             else
             {
-                button.BackColor = Color.LightGreen;
+                button.BackColor = Color.LightBlue;
                 button.ForeColor = Color.Black;
             }
         }
-        //التحقق من كل الازرار انو فاضية
         public bool CheckIfAllButtonsAreOff()
         {
             foreach (Control control in tableLayoutPanel1.Controls)
@@ -180,7 +165,7 @@ namespace lights_out
                 if (control is Button button)
                 {
 
-                    if (button.BackColor == Color.LightGreen)
+                    if (button.BackColor == Color.LightBlue)
                     {
                         return false;
                     }
@@ -189,7 +174,6 @@ namespace lights_out
             return true;
               
         }
-        //التحقق من الفوز
         public void Win_Stat()
         {
             MessageBox.Show($"You Win By {Move_count} Moves", "Great", MessageBoxButtons.OK);
@@ -198,7 +182,6 @@ namespace lights_out
             GameIsStarted = false;
             PestRecord();
         }
-        //جعل كل الازرار مقفلة
         public void Dsabel_button()
         {
 
@@ -210,7 +193,6 @@ namespace lights_out
                 }
             }
         }
-        //اعادة اللعبة
         public void ResetGame()
         {
             playCount++;
@@ -220,7 +202,6 @@ namespace lights_out
             GameIsStarted = true;
          
         }
-        //حساب افضل نتيجه
         public void PestRecord()
         {
             if (BestRecord == 0)
@@ -241,7 +222,6 @@ namespace lights_out
             }
 
         }
-        //بدأ اللعبة
         public void Game_Coundtion()
         {
             if (GameIsStarted == true)
